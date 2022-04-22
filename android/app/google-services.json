@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "112156427975",
+    "project_id": "intown-test",
+    "storage_bucket": "intown-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112156427975:android:a77b201aa335d7a683a0e2",
+        "android_client_info": {
+          "package_name": "com.example.map_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112156427975-hb3k3r97lp84fqfes1cgk87278nmqlps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfYOU5BUXdF42nnQsfqL34wTL9kXqlt4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112156427975-hb3k3r97lp84fqfes1cgk87278nmqlps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
