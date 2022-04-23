@@ -1,17 +1,13 @@
-# map_app
+# Map App
 
-A new Flutter project.
+In Town test location app.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+- [You can find the documentation to the project here.](https://github.com/abdulsamad234/intown-test/doc)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Things i would improve if given enough time
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# intown-test
+- I would check if location actually changed by some significant margin from the last location (of course to still fulfill the requirements), this way we can drastically reduce the number of writes to the firestore database.
+- I would also organize my code cleaner and write more abstractions.
