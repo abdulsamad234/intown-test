@@ -30,12 +30,10 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
     });
 
     /// When update location event is added to bloc
-    on<UpdateLocationEvent>((UpdateLocationEvent event, Emitter<LocationState> emit) {
-      // Check if user is logged in
-      if (firebaseRepository.isUserLoggedIn()) {
-        // Emit state with new current location
-        emit(state.copyWith(userLocation: event.userLocation));
-      }
+    on<UpdateLocationEvent>(
+        (UpdateLocationEvent event, Emitter<LocationState> emit) {
+      // Emit state with new current location
+      emit(state.copyWith(userLocation: event.userLocation));
     });
 
     /// When upload location event is added to bloc
@@ -43,7 +41,8 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
       // Check if user is logged in
       if (firebaseRepository.isUserLoggedIn()) {
         // Upload current location
-        firebaseRepository.uploadLocation(state.userLocation!, firebaseRepository.getUserId());
+        firebaseRepository.uploadLocation(
+            state.userLocation!, firebaseRepository.getUserId());
       }
     });
   }
