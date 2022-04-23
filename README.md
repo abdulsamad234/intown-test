@@ -4,8 +4,11 @@ In Town test location app.
 
 ## Getting Started
 
-- [You can find the documentation to the project here.](https://github.com/abdulsamad234/intown-test/doc)
+- [You can find the documentation to the project here.](https://intown-test.web.app)
 
+
+- Here's a video recording of the app in action but modified to update location every 2 seconds (for testing purposes)
+![](screen.gif)
 
 ## Things i would improve if given enough time
 
