@@ -1,6 +1,14 @@
 part of 'location_bloc.dart';
 
-@immutable
-abstract class LocationState {}
+@CopyWith()
+class LocationState extends Equatable {
 
-class LocationInitial extends LocationState {}
+  const LocationState({required this.userLocation});
+  
+  // User location stored in bloc state
+  final UserLocation userLocation;
+
+  @override
+  List<Object> get props => <Object>[userLocation];
+
+}

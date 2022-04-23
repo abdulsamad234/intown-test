@@ -1,8 +1,10 @@
 import 'dart:convert';
 
+import 'package:equatable/equatable.dart';
+
 
 /// Model for user location 
-class UserLocation {
+class UserLocation extends Equatable{
 
   /// Constructor
   const UserLocation({
@@ -39,4 +41,7 @@ class UserLocation {
 
   /// Function to convert map to json string
   String toJson() => json.encode(toMap());
+  
+  @override
+  List<Object?> get props => <Object>[longitude, latitude];
 }
