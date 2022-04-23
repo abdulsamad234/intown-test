@@ -1,7 +1,7 @@
 part of 'location_bloc.dart';
 
 @immutable
-abstract class LocationEvent extends Equatable{
+abstract class LocationEvent extends Equatable {
   const LocationEvent();
 
   @override
@@ -9,4 +9,16 @@ abstract class LocationEvent extends Equatable{
 }
 
 /// Login user event
-class LoginEvent extends LocationEvent{}
+class LoginEvent extends LocationEvent {}
+
+/// Update current user location event
+class UpdateLocationEvent extends LocationEvent {
+  const UpdateLocationEvent({required this.userLocation});
+  final UserLocation userLocation;
+
+  @override
+  List<Object> get props => <Object>[userLocation];
+}
+
+/// Upload to firestore event
+class UploadEvent extends LocationEvent {}

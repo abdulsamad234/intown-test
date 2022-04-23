@@ -9,15 +9,15 @@ import '../../data/repositories/firebase_repository.dart';
 
 part 'location_event.dart';
 part 'location_state.dart';
+part 'location_bloc.g.dart';
 
 class LocationBloc extends Bloc<LocationEvent, LocationState> {
   LocationBloc({required this.firebaseRepository})
-      : super(const LocationState(
-            userLocation: UserLocation(latitude: 0.0, longitude: 0.0))) {
+      : super(const LocationState()) {
     on<LocationEvent>((LocationEvent event, Emitter<LocationState> emit) {});
 
     /// When login event is added to bloc
-    on<LoginEvent>((LocationEvent event, Emitter<LocationState> emit) {
+    on<LoginEvent>((LoginEvent event, Emitter<LocationState> emit) {
       // Check if user is logged in
       if (!firebaseRepository.isUserLoggedIn()) {
         // If user isn't logged in, log them in
@@ -26,6 +26,24 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
         }).onError((Object? error, StackTrace stackTrace) {
           debugPrint('User not logged in, error occured');
         });
+      }
+    });
+
+    /// When update location event is added to bloc
+    on<UpdateLocationEvent>((UpdateLocationEvent event, Emitter<LocationState> emit) {
+      // Check if user is logged in
+      if (firebaseRepository.isUserLoggedIn()) {
+        // Emit state with new current location
+        emit(state.copyWith(userLocation: event.userLocation));
+      }
+    });
+
+    /// When upload location event is added to bloc
+    on<UploadEvent>((UploadEvent event, Emitter<LocationState> emit) {
+      // Check if user is logged in
+      if (firebaseRepository.isUserLoggedIn()) {
+        // Upload current location
+        firebaseRepository.uploadLocation(state.userLocation!, firebaseRepository.getUserId());
       }
     });
   }
